@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FireBase Demo</title>
+    <script src='https://cdn.firebase.com/js/client/1.1.1/firebase.js'></script>
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+    <ul class="navigation">
+        <li id="login" class="nav-item"><a href="#">Log In</a></li>
+        <li id="logout" class="nav-item"><a href="#">Log Out</a></li>
+        <li class="nav-item"><a href="#">Home</a></li>
+        <li class="nav-item"><a href="#">Portfolio</a></li>
+        <li class="nav-item"><a href="#">About</a></li>
+        <li class="nav-item"><a href="#">Blog</a></li>
+        <li class="nav-item"><a href="#">Contact</a></li>
+    </ul>
+
+    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+    <label for="nav-trigger"></label>
+
+    <div class="site-wrap">
+
+        <h1>Hello World</h1>
+        <div
+                class="fb-like"
+                data-share="true"
+                data-width="450"
+                data-show-faces="true">
+        </div>
+        <p>Add New Person</p>
+        <input id="input1" type="text" placeholder="First"/>
+        <input id="input2" type="text" placeholder="Last"/>
+        <p id="output1"></p>
+        <hr/>
+        <p id="added"></p>
+        <hr/>
+        <form action="" id="removeForm">
+            <input id="removeUser" type="text" placeholder="Remove"/>
+            <input type="submit"/>
+        </form>
+        <p id="removed"></p>
+        <hr/>
+        <form action="" id="form">
+            <input type="text" id="updateName" placeholder="name"/>
+            <input type="text" id="updateHobby" placeholder="New Hobby"/>
+            <input type='submit'/>
+        </form>
+        <p id="updated"></p>
+        <hr/>
+        <form id="retrieve" action="">
+            <input id="nameFinder" type="text" placeholder="Find by First Name"/>
+            <button type="submit">Find Name</button>
+        </form>
+        <div class="fb-comments" data-href="http://mathdrquinn.github.io" data-width="100%" data-numposts="4" data-colorscheme="light"></div>
+    </div>
+    <!--<script>(function(d, s, id) {-->
+        <!--var js, fjs = d.getElementsByTagName(s)[0];-->
+        <!--if (d.getElementById(id)) return;-->
+        <!--js = d.createElement(s); js.id = id;-->
+        <!--js.src = "//connect.facebook.net/en_US/sdk.js#xfb
+        ml=1&appId=1498380423755870&version=v2.0";-->
+        <!--fjs.parentNode.insertBefore(js, fjs);-->
+    <!--}(document, 'script', 'facebook-jssdk'));</script>-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '1498380423755870',
+                xfbml      : true,
+                version    : 'v2.2'
+            });
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+</body>
+</html>
